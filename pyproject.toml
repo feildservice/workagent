@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "workagent"
+version = "0.1.0"
+description = ""
+authors = ["solmon <solmon@gmail.com>"]
+readme = "README.md"
+
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.group.typing.dependencies]
+mypy = ">=1.8.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+ms = "echo:main"
+
+[tool.mypy]
+files = "src, tests"
+mypy_path = "src"
+namespace_packages = true
+explicit_package_bases = true
+strict = true
+enable_error_code = [
+    "ignore-without-code",
+    "redundant-expr",
+    "truthy-bool",
+]
